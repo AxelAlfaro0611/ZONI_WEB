@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Navbar fijo con tamaño ajustado */
+.navbar {
+    background-color: #212529;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.75rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+}
+
+/* Añadir margen superior al contenido para que no quede oculto debajo del navbar */
+#inicio {
+    margin-top: 64px;
+}
+
+/* Estilos del carrusel */
+.carousel-item {
+    max-height: 70vh;
+}
+
+.carousel-item img {
+    max-height: 70vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.carousel-caption h1 {
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.carousel-caption .p-carousel-main {
+    font-size: 1.2rem;
+}
+
+/* Estilos de las tarjetas de productos */
+.product-card {
+    transition: transform 0.3s ease;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; /* Para posicionar el logo de WhatsApp */
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative; /* Para posicionar el logo de WhatsApp */
+}
+
+/* Estilo para el logo de WhatsApp dentro de las tarjetas */
+.whatsapp-card {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.whatsapp-icon {
+    width: 40px; /* Tamaño del logo dentro de las tarjetas */
+    height: 40px;
+}
+
+/* Botón de WhatsApp flotante (el original) */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
+
+.whatsapp-btn .whatsapp-icon {
+    width: clamp(40px, 5vw, 60px); /* Tamaño del botón flotante */
+    height: clamp(40px, 5vw, 60px);
+}
+
+/* Ajuste para la cuadrícula de productos */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.col-md-4 {
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    display: flex;
+    align-items: stretch;
+}
+
+.product-card {
+    width: 100%;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 992px) {
+    .col-md-4 {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+
+    .product-card {
+        height: 350px;
+    }
+
+    .product-card .card-img-top {
+        height: 175px;
+    }
+
+    .carousel-caption {
+        display: block;
+    }
+
+    .carousel-item {
+        max-height: 50vh;
+    }
+
+    .carousel-item img {
+        max-height: 50vh;
+    }
+
+    #inicio {
+        margin-top: 60px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .whatsapp-icon {
+        width: 35px; /* Reducir el tamaño del logo en tablets */
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .product-card {
+        height: 300px;
+    }
+
+    .product-card .card-img-top {
+        height: 150px;
+    }
+
+    .carousel-caption h1 {
+        font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+    }
+
+    .carousel-caption .p-carousel-main {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .carousel-item {
+        max-height: 40vh;
+    }
+
+    .carousel-item img {
+        max-height: 40vh;
+    }
+
+    #inicio {
+        margin-top: 54px;
+    }
+
+    .whatsapp-icon {
+        width: 30px; /* Reducir el tamaño del logo en móviles */
+        height: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .product-card {
+        height: 280px;
+    }
+
+    .product-card .card-img-top {
+        height: 140px;
+    }
+
+    .product-card .card-body {
+        padding: 0.75rem;
+    }
+
+    .carousel-item {
+        max-height: 30vh;
+    }
+
+    .carousel-item img {
+        max-height: 30vh;
+    }
+
+    .carousel-caption h1 {
+        font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+    }
+
+    .carousel-caption .p-carousel-main {
+        font-size: 0.9rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    #inicio {
+        margin-top: 50px;
+    }
+
+    .whatsapp-icon {
+        width: 25px; /* Reducir aún más en móviles pequeños */
+        height: 25px;
+    }
+}
