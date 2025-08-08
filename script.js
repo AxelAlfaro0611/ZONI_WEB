@@ -1,5 +1,5 @@
 // Configura el número de WhatsApp aquí (sin espacios ni signos, solo el código de país y número)
-const whatsappNumber = "51926570030"; // Ejemplo: +57 312 345 6789
+const whatsappNumber = "51927676365"; // Ejemplo: +57 312 345 6789
 
 // Mensaje para el botón flotante de WhatsApp
 const whatsappMessage = "¡Hola! Estoy interesado en comprar un accesorio para motociclista.";
